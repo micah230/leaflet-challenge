@@ -8,7 +8,7 @@ d3.json(queryUrl).then(function (data) {
 });
 
 function createFeatures(earthquakeData) {
-
+console.log(earthquakeData);
     // Define a function that we want to run once for each feature in the features array.
     // Give each feature a popup that describes the place and time of the earthquake.
     function createPopups(feature, layer) {
@@ -17,10 +17,10 @@ function createFeatures(earthquakeData) {
   
     // Define a function to get color based on depth
     function getColor(depth) {
-        if (depth < 10) return "#1fe568"; // Green
-        else if (depth < 30) return "#d2ee00ee"; // Yellow
-        else if (depth < 60) return "#eeb600e7"; // Orange
-        else if (depth < 100) return "#ef6e11"; // Red
+        if (depth < 10) return "#13a849"; // Green
+        else if (depth < 30) return "#bdd109ee"; // Yellow
+        else if (depth < 60) return "#f59f0bca"; // Orange
+        else if (depth < 100) return "#e5410b"; // Red
         else return "#9a0b0b"; // Dark Red
     }
     
@@ -79,7 +79,7 @@ function createMap(earthquakes) {
     center: [
       37.09, -95.71
     ],
-    zoom: 5,
+    zoom: 4,
     layers: [street, earthquakes]
   });
 
